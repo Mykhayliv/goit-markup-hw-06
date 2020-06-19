@@ -244,19 +244,26 @@ img {
 }
 .form .close-modal {
   position: absolute;
-  top: 0;
-  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  top: 8px;
+  right: 8px;
 
   width: 30px;
   height: 30px;
-  transform: translate(25%, -25%);
   border-radius: 50%;
 
   border-color: transparent;
   background: var(--bg-color);
-  box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14),
-    0px 1px 3px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
   cursor: pointer;
+}
+.close-modal:focus .icon-close,
+.close-modal:hover .icon-close {
+  --color1: var(--bg-color-accent);
 }
 .form .text {
   margin-bottom: 30px;
@@ -286,9 +293,11 @@ img {
 }
 .form-imput:focus + .form-label,
 .form-imput:not(:placeholder-shown) + .form-label {
-  transform: translateY(-45px);
+  transform: translateY(-43px);
   left: 16px;
   color: var(--accent-color);
+  font-size: 12px;
+  line-height: 14px;
 }
 .form-imput:focus {
   border-color: var(--accent-color);
@@ -369,10 +378,8 @@ img {
   outline: none;
 }
 .form .botton-send {
-  position: absolute;
-  bottom: 40px;
-  left: 50%;
-  transform: translateX(-50%);
+  margin-top: 30px;
+  margin-left: 125px;
 
   display: flex;
   align-items: center;
@@ -389,6 +396,7 @@ img {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
   border: none;
+  cursor: pointer;
 }
 /* Features */
 .section-features {
@@ -716,8 +724,14 @@ img {
   padding-top: 15px;
   padding-bottom: 15px;
 
+  margin-right: 12px;
+
   background: #2f303a;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
 }
 .subscription .button-primary {
   display: inline-flex;
